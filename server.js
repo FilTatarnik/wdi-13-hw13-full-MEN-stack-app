@@ -5,5 +5,4 @@ const PORT = 3000;
 
 app.listen(PORT, () => {
 		console.log('Port 3000 works');
-		console.log('another console log bc i can');
 })
