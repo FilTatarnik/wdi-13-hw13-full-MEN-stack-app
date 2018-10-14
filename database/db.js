@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost')
+mongoose.connect('mongodb://localhost', {
+	useNewUrlParser: true
+	
+})
 
-monogoose.connection.on('connection established', () => {
+mongoose.connection.on('connection established', () => {
 		console.log("connected");
 })
-monogoose.connection.on('connection not established', () => {
+mongoose.connection.on('connection not established', () => {
 		console.log("diconnected");
+})
+mongoose.connection.on('error', (error) => {
+		console.log(error);
 })
