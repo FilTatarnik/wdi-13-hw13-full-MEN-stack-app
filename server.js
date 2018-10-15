@@ -7,11 +7,19 @@ const methodOverride = require('method-override');
 
 require('./database/db')
 
-app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
+
+
+
 const orderController = require('./controllers/orderController');
-// app.use('/orders', orderController)
+app.use('/orders', orderController);
+
+// app.get('/', (req, res) => {
+// 	res.redirect('index.ejs')
+// })
 
 
 
