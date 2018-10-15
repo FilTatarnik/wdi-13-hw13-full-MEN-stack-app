@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 	const orderSchema = new Schema({
 		orderNum: Number, 
-		order: String,
+		orderName: String,
 
 	})
 

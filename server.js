@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const orderController = require('./controllers/orderController');
 
 require('./database/db')
 
@@ -14,7 +15,6 @@ app.use(methodOverride('_method'));
 
 
 
-const orderController = require('./controllers/orderController');
 app.use('/orders', orderController);
 
 // app.get('/', (req, res) => {

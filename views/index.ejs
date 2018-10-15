@@ -7,5 +7,16 @@
 </head>
 <body>
 	<h1>Order Index Page</h1>
+		<ul>
+		 		<% for (let i = 0; i < orders.length; i++) { -%>
+		 			<li>
+		 				<a href="/order/<%=orders[i].id%>"><%=orders[i].orderNum%></a>
+				 			<form action='/orders/<%=orders[i].id%>?_method=DELETE' method="POST">
+				 				<input type="submit" value="Delete">
+				 			</form>
+		 			<a href="/orders/<%=orders[i].id%>/edit">Edit</a>
+		 			</li>
+		 		<% } -%>
+		 	</ul>
 </body>
 </html>
