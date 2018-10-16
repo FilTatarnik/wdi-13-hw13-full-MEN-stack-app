@@ -11,6 +11,9 @@
 	<h2><%=orders.orderName%>
 		<br>
 	<a href="/orders/<%=orders.id%>/edit">Edit Order</a>
+      <form action="/orders/<%=orders.id%>?_method=DELETE" method="POST" >
+        <input type="submit" value="Delete Order">
+      </form>
 	<!--loop that makes the orders that were made-->
 	<br>
 		<a href="http://localhost:3000/orders">Home</a>

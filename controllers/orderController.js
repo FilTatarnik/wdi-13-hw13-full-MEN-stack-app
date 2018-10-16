@@ -67,13 +67,17 @@ router.put('/:id', (req, res) => {
 })
 
 //delete
+router.delete('/:id', (req, res) => {
+	Orders.findByIdAndRemove(req.params.id, 
+		(err, deletedOrder) => {
+			if(err){
+				console.log(`--------------ERROR--------------\n`, err);}
+				else{
+					console.log(`----------------Deleted Order------------------\n`, deletedOrder);
+				}
+			res.redirect('/orders');
+	})
+})
 
-// router.post('/', (req, res) => {
-// 	res.render('show.ejs');
-// })
-
-// router.post('/order/new', (req, res) => {
-// 	res.render('new.ejs')
-// })
 
 module.exports = router;
