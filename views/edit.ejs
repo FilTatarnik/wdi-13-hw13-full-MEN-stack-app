@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Edit "<%=order.orderName%>"</h1>
+
+	<form action="/orders/<%=order.id%>?_method=PUT" method="POST">
+		Edit Order Name: <input type="text" name="orderName" value="<%=order.orderName%>">
+		<br>
+		Edit Order Number: <input type="text" name="orderNum" value="<%=order.orderNum%>">
+		<br>
+		<input type="submit" value="Edit Order">
+	</form>
+</body>
+</html>

@@ -7,10 +7,14 @@
 </head>
 <body>
 	<h1>Individual Order Show Page</h1>
+	<h3><%=orders.orderNum%>
+	<h2><%=orders.orderName%>
+		<br>
+	<a href="/orders/<%=orders.id%>/edit">Edit Order</a>
 	<!--loop that makes the orders that were made-->
-	<ul>
-		<li><a href="http://localhost:3000/">Home</a></li>
-	</ul>
+	<br>
+		<a href="http://localhost:3000/orders">Home</a>
+	
 </body>
 </html>
 
