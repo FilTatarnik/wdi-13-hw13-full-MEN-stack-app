@@ -11,9 +11,10 @@
 	<!--loop that makes the orders that were made-->
 	<ul>
 		<% for (let i = 0; i < orders.length; i++) { %>
-		<li><a href="/orders/<%=orders[i]._id%>"> <%=orders[i].name%> </a></li>
+		<li><a href="/orders/<%=orders[i]._id%>"> <%=orders[i].orderNum%> </a></li>
 		<% } %>
 	</ul>
+
 	
 	
 		<li><a href="http://localhost:3000/orders">Home</a></li>

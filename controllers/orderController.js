@@ -24,6 +24,23 @@ router.get('/',(req, res) => {
 router.get('/new', (req, res) => {
 	res.render('new.ejs');
 })
+
+// show
+router.get('/:id', (req, res) => {
+	Orders.findById(req.params.id, 
+		(err, foundOrder) => {
+			if(err){console.log(`---------- ERROR ---------- \n`, err);}
+			 	else {
+			 		console.log(`---------- FOUND ROOM ---------- \n`, foundOrders);
+			 		res.render('show.ejs', {
+			 			orders: foundOrders
+			 		});
+			 }
+	})
+})
+// edit
+
+//update
 //create
 router.post('/', (req, res) => {
 	Orders.create(req.body, (err, madeOrders) => {
@@ -35,23 +52,6 @@ router.post('/', (req, res) => {
 			}
 	})
 })
-
-// show
-router.get('/:id', (req, res) => {
-	Orders.findById(req.params.id, 
-		(err, foundOrder) => {
-			if(err){console.log(`---------- ERROR ---------- \n`, err);}
-			 	else {
-			 		console.log(`---------- FOUND ROOM ---------- \n`, foundOrders);
-			 		res.render('show.ejs', {
-			 			order: foundOrders
-			 		});
-			 }
-	})
-})
-// edit
-
-//update
 
 //delete
 
